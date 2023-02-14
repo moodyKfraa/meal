@@ -1,0 +1,838 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  caret-color: var(--mainColor);
+  font-family: "Open Sans", sans-serif;
+  background-color: #cfcfcf;
+  height: 100vh;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: transparent;
+  transition-duration: 0.3s;
+}
+a:hover {
+  transform: scale(1.1);
+}
+.container {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+header {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+}
+header .container {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+header i {
+  color: #333;
+  font-size: 20px;
+}
+.roll {
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-30%, -75%) rotateZ(35deg);
+  border-radius: 50%;
+  background: linear-gradient(#00b3ff50, #ff840050);
+  animation: roll 16s 0.8s ease-in-out infinite;
+}
+@keyframes roll {
+  20% {
+    transform: translate(-30%, -75%) rotateZ(35deg);
+  }
+  25% {
+    transform: translate(-30%, -75%) rotateZ(125deg);
+  }
+  45% {
+    transform: translate(-30%, -75%) rotateZ(125deg);
+  }
+  50% {
+    transform: translate(-30%, -75%) rotateZ(215deg);
+  }
+  70% {
+    transform: translate(-30%, -75%) rotateZ(215deg);
+  }
+  75% {
+    transform: translate(-30%, -75%) rotateZ(305deg);
+  }
+  95% {
+    transform: translate(-30%, -75%) rotateZ(305deg);
+  }
+  100% {
+    transform: translate(-30%, -75%) rotateZ(395deg);
+  }
+}
+.roll::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  background-color: #cfcfcf;
+  border-radius: 50%;
+  z-index: 1;
+}
+.roll .overlay {
+  border-radius: 50%;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 320px;
+}
+.roll img {
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgb(158, 158, 158);
+}
+
+.landing {
+  height: 100%;
+  background-color: #cfcfcf;
+}
+.landing .container {
+  height: 100%;
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 20px;
+}
+.landing .container .col1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.landing .text {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  z-index: 5;
+}
+.landing .text #num {
+  position: relative;
+  visibility: hidden;
+  color: #333;
+}
+.landing .text #num::after {
+  content: "1";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  color: #333;
+  animation: numanimate 16s 0.8s infinite;
+  visibility: visible;
+}
+@keyframes numanimate {
+  20% {
+    opacity: 1;
+    content: "1";
+  }
+  22.5% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    content: "2";
+  }
+  45% {
+    opacity: 1;
+    content: "2";
+  }
+  47.5% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    content: "3";
+  }
+  70% {
+    opacity: 1;
+    content: "3";
+  }
+  72.5% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+    content: "4";
+  }
+  95% {
+    opacity: 1;
+    content: "4";
+  }
+  97.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    content: "1";
+  }
+}
+
+.landing .text h1 {
+  margin: 0;
+  position: relative;
+  visibility: hidden;
+  font-size: 60px;
+}
+
+.f1::after {
+  content: "lotek";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 48px;
+  font-weight: 100;
+  color: #333;
+  text-transform: uppercase;
+  animation: animatef1 16s 0.8s infinite;
+  visibility: visible;
+}
+
+.landing .text .f2 {
+  letter-spacing: -5px;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+.landing .text .f2::after {
+  content: "perkedel";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 60px;
+  font-weight: bolder;
+  color: #333;
+  text-transform: uppercase;
+  animation: animatef2 16s 0.8s infinite;
+  visibility: visible;
+}
+
+@keyframes animatef1 {
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "lotek";
+  }
+  22.5% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "lamb steak";
+  }
+  45% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "lamb steak";
+  }
+  47.5% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "martabak";
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "martabak";
+  }
+  72.5% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  75% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "urap asli";
+  }
+  95% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "urap asli";
+  }
+  97.5% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "lotek";
+  }
+}
+
+/* animate f2 */
+@keyframes animatef2 {
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "perkedel";
+  }
+  22.5% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "potato";
+  }
+  45% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "potato";
+  }
+  47.5% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "pak adin";
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "pak adin";
+  }
+  72.5% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  75% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "wonogiri";
+  }
+  95% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "wonogiri";
+  }
+  97.5% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    content: "perkedel";
+  }
+}
+.landing .text .boxs {
+  display: flex;
+  gap: 50px;
+}
+.landing .text .boxs .box {
+  display: flex;
+  gap: 15px;
+}
+.landing .text .box i {
+  color: #333;
+  font-size: 20px;
+}
+/* end text */
+.landing .col1 .mealsbar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 70px;
+}
+.landing .col1 .mealsbar span {
+  box-sizing: content-box;
+  width: 6px;
+  height: 6px;
+  transform: rotateZ(-45deg);
+  border-style: solid;
+  border-width: 5px;
+}
+.leftArrow {
+  border-color: #333 transparent transparent #333;
+}
+.rightArrow {
+  border-color: transparent #333 #333 transparent;
+}
+.landing .col1 .mealsbar .boxs {
+  display: flex;
+  width: 100%;
+  gap: 35px;
+  align-items: center;
+  position: relative;
+  padding: 10px 10px;
+}
+.landing .col1 .mealsbar .box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+.landing .col1 .mealsbar .box img {
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px -5px rgb(90, 90, 90);
+}
+.landing .col1 .mealsbar .box {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+.landing .col1 .mealsbar .box .Imgtext {
+  text-align: center;
+}
+.landing .col1 .mealsbar .box .Imgtext p {
+  color: #333;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.landing .col1 .mealsbar .boxs::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  height: 100%;
+  width: 120px;
+  animation: boxanimate 16s 0.8s infinite;
+}
+@keyframes boxanimate {
+  20% {
+    left: 0;
+  }
+  25% {
+    left: calc(135px * 1);
+  }
+  45% {
+    left: calc(135px * 1);
+  }
+  50% {
+    left: calc(135px * 2);
+  }
+  70% {
+    left: calc(135px * 2);
+  }
+  75% {
+    left: calc(135px * 3);
+  }
+  95% {
+    left: calc(135px * 3);
+  }
+  100% {
+    left: calc(135px * 0);
+  }
+}
+
+/* end meals */
+.lowerNav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  align-items: center;
+}
+.lowerNav .active {
+  background-color: rgb(190, 190, 190);
+  margin-left: 12px;
+}
+.lowerNav .mic {
+  background-color: #ebebeb;
+  border-radius: 50%;
+}
+.lowerNav i {
+  font-size: 22px;
+  color: #333;
+  padding: 20px;
+  border-radius: 20px;
+}
+/* end col1 */
+
+.landing .col2 {
+  display: flex;
+}
+.col2 .aside {
+  background-color: #d9d9d9;
+  min-width: 60%;
+  margin-left: auto;
+  margin-top: 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 20px;
+  height: fit-content;
+}
+.col2 .aside .row1 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.col2 .aside .row1 a {
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.col2 .aside .row2 {
+  display: flex;
+  flex-direction: column;
+}
+.col2 .aside .row2 h1 {
+  visibility: hidden;
+  position: relative;
+  margin: 0;
+  font-size: 50px;
+}
+.col2 .aside .row2 h1::before {
+  content: "";
+  visibility: visible;
+  position: absolute;
+  left: -10px;
+  top: 5;
+  width: 50px;
+  height: 130%;
+  background-color: #ffa365;
+  border-radius: 10px;
+  animation: backRateAnimate 16s 0.8s infinite;
+}
+.col2 .aside .row2 h1::after {
+  content: "4.9";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #333;
+  font-size: 50px;
+  visibility: visible;
+  animation: rateAnimate 16s 0.8s infinite;
+}
+.col2 .aside .row2 i {
+  z-index: 1;
+  color: #333;
+  font-size: 12px;
+  margin-left: 10px;
+}
+@keyframes rateAnimate {
+  20% {
+    opacity: 1;
+    content: "4.9";
+    transform: translateY(0);
+  }
+  22.5% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  25% {
+    opacity: 1;
+    content: "4.3";
+    transform: translateY(0);
+  }
+  45% {
+    opacity: 1;
+    content: "4.3";
+    transform: translateY(0);
+  }
+  47.5% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+    content: "4.6";
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    content: "4.6";
+    transform: translateY(0);
+  }
+  72.5% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  75% {
+    opacity: 1;
+    content: "4.5";
+    transform: translateY(0);
+  }
+  95% {
+    opacity: 1;
+    content: "4.5";
+    transform: translateY(0);
+  }
+  97.5% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    content: "4.9";
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes backRateAnimate {
+  20% {
+    background-color: #ffa365;
+  }
+  25% {
+    background-color: #f3b8d6;
+  }
+  45% {
+    background-color: #f3b8d6;
+  }
+
+  50% {
+    background-color: #b6cb9d;
+  }
+  70% {
+    background-color: #b6cb9d;
+  }
+
+  75% {
+    background-color: #fccf5d;
+  }
+  95% {
+    background-color: #fccf5d;
+  }
+
+  100% {
+    background-color: #ffa365;
+  }
+}
+/* //row 3 "text" */
+
+.col2 .aside .row3 {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: #333;
+  animation: row3Animate 16s 0.8s infinite;
+}
+
+@keyframes row3Animate {
+  20% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  22.5% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  45% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  47.5% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  72.5% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  95% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  97.5% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.col2 .aside .row3 h1 {
+  position: relative;
+  width: fit-content;
+}
+.col2 .aside .row3 h1::after {
+  content: "feny";
+  position: absolute;
+  left: 110%;
+  bottom: 0;
+  color: #333;
+  font-size: 30px;
+  min-width: 170px;
+  animation: h1ContentChange 16s 0.8s infinite;
+}
+.col2 .aside .row3 p {
+  font-size: 15px;
+  position: relative;
+}
+.col2 .aside .row3 .p1::after,
+.col2 .aside .row3 .p2::after {
+  content: "dapour urmum tornonon";
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 100;
+  animation: p1ContentChange 16s 0.8s infinite;
+}
+.col2 .aside .row3 .p2::after {
+  content: "kau terindah kan selalu terinadah,apalogi masakanmu .ahayy malah nge gombal si abang";
+  bottom: 5px;
+  line-height: 1.2;
+  font-weight: 400;
+  animation: p2ContentChange 16s 0.8s infinite;
+}
+@keyframes h1ContentChange {
+  20% {
+    content: "feny";
+  }
+  25% {
+    content: "k semy";
+  }
+  45% {
+    content: "k semy";
+  }
+  50% {
+    content: "adin salma";
+  }
+  70% {
+    content: "adin salma";
+  }
+  75% {
+    content: "Reza";
+  }
+  95% {
+    content: "Reza";
+  }
+  100% {
+    content: "feny";
+  }
+}
+
+@keyframes p1ContentChange {
+  20% {
+    content: "dapour urmum tornonon";
+  }
+  25% {
+    content: "komunitas pednta brutu";
+  }
+  45% {
+    content: "komunitas pednta brutu";
+  }
+  50% {
+    content: "wateg mos pur";
+  }
+  70% {
+    content: "wateg mos pur";
+  }
+  75% {
+    content: "shushi tei";
+  }
+  95% {
+    content: "shushi tei";
+  }
+  100% {
+    content: "dapour urmum tornonon";
+  }
+}
+
+@keyframes p2ContentChange {
+  20% {
+    content: "kau terindah kan selalu terinadah,apalogi masakanmu .ahayy malah nge gombal si abang";
+  }
+  25% {
+    content: "dosen pembimbingku kok asem tenan yo rek. mossok ket wjngi ra teko teko ,sull sull";
+  }
+  45% {
+    content: "dosen pembimbingku kok asem tenan yo rek. mossok ket wjngi ra teko teko ,sull sull";
+  }
+  50% {
+    content: "dengan modus 'neng mobar yuk akhinnya adin sukses menjadi jurogan penerus mas pur'";
+  }
+  70% {
+    content: "dengan modus 'neng mobar yuk akhinnya adin sukses menjadi jurogan penerus mas pur'";
+  }
+  75% {
+    content: "designer nyambi chef ,setelah menikanhi gadis south mountains yg lama dinanti nanti";
+  }
+  95% {
+    content: "designer nyambi chef ,setelah menikanhi gadis south mountains yg lama dinanti nanti";
+  }
+  100% {
+    content: "kau terindah kan selalu terinadah,apalogi masakanmu .ahayy malah nge gombal si abang";
+  }
+}
+/* end row 3 */
+
+.col2 .aside .row4 {
+  display: flex;
+  gap: 50px;
+}
+.col2 .aside .row4 div {
+  background-color: #cfcfcf;
+  border-radius: 30px;
+  padding: 10px;
+  color: #333;
+}
+.col2 .aside .row4 .like {
+  display: flex;
+  gap: 10px;
+}
+
+/* //media */
+
+@media (max-width: 1024px) {
+  .col1 .text {
+    margin-right: -15px;
+  }
+  .col2 .aside .row3 h1::after,
+  .col2 .aside .row3 h1 {
+    font-size: 25px;
+  }
+  .col2 .aside .row3 .p2::after {
+    bottom: -5px;
+  }
+}
